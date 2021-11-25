@@ -36,7 +36,7 @@ class CreditsState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("Checking The Credits", null);
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
@@ -46,13 +46,15 @@ class CreditsState extends MusicBeatState
 		add(grpOptions);
 
 		#if MODS_ALLOWED
-		trace("finding mod shit");
+		trace("finding mod shit currently");
 		if (FileSystem.exists(Paths.mods())) {
 			trace("mods folder");
 			if (FileSystem.exists(Paths.modFolders("data/credits.txt"))){
 				trace("credit file");
 				var firstarray:Array<String> = CoolUtil.coolTextFile(Paths.modFolders("data/credits.txt"));
-				trace("found credit shit");
+				trace("found credit shit");				
+			else
+				trace("cant find the credit shit lmao");	
 				
 				for(i in firstarray){
 					var arr:Array<String> = i.split("::");
@@ -75,6 +77,9 @@ class CreditsState extends MusicBeatState
 			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',						'https://twitter.com/polybiusproxy',	'FFEAA6'],
 			['Keoiki',				'keoiki',			'Note Splash Animations',							'https://twitter.com/Keoiki_',			'FFFFFF'],
 			['bubba',				'bubba',		'Guest Composer for "Hot Dilf"',	'https://www.youtube.com/channel/UCxQTnLmv0OAS63yzk9pVfaw',	'61536A'],
+			[''],
+			["Vs Randy Hilson Suicide Mouse Team"],
+			['MarioGuy',		'marioguy',	"Artist and Animator of Vs Randy Hilson Suicide Mouse'",				'https://www.youtube.com/channel/UCzOpSJSl2xemFLXlKG4kKDQ',	'FF0037'],
 			[''],
 			["Funkin' Crew"],
 			['ninjamuffin99',		'ninjamuffin99',	"Programmer of Friday Night Funkin'",				'https://twitter.com/ninja_muffin99',	'F73838'],
